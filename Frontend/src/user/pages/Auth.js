@@ -33,19 +33,21 @@ const Auth = () => {
 
 
     if (isLoginMode) {
-      try {
-      const response = await fetch('http://localhost:5000/api/users/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          email: formState.inputs.email.value,
-          password: formState.inputs.password.value,
-        })
-      }); } catch (err) {
-        console.log(err)
-      }
+      // try {
+      // const response = await fetch('http://localhost:5000/api/users/login', {
+      //   method: 'POST',
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      //   body: JSON.stringify({
+      //     email: formState.inputs.email.value,
+      //     password: formState.inputs.password.value,
+      //   })
+      // }); } catch (err) {
+      //   console.log(err)
+      // }
+
+
     } else {
       try{
       const response = await fetch('http://localhost:5000/api/users/signup', {
