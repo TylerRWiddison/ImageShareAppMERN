@@ -1,40 +1,39 @@
-import express from "express";
-import { check } from "express-validator";
+const express = require('express');
+const { check } = require('express-validator');
 
-// Imported controller functions for individual routes
-import {
-  createPlace,
-  deletePlaceById,
-  getPlaceById,
-  getPlaceByUserId,
-  updatePlaceById,
-} from "../controllers/places-controller.js";
+const placesControllers = require('../controllers/places-controllers');
 
 const router = express.Router();
 
-router.get("/user/:uid", getPlaceByUserId);
+router.get('/:pid', placesControllers.getPlaceById);
 
-router.get("/:pid", getPlaceById);
+router.get('/user/:uid', placesControllers.getPlacesByUserId);
 
 router.post(
-  "/",
+  '/',
   [
-    check("title").not().isEmpty(),
-    check("description").isLength({ min: 5 }, 
-    check("address").not().isEmpty()),
+    check('title')
+      .not()
+      .isEmpty(),
+    check('description').isLength({ min: 5 }),
+    check('address')
+      .not()
+      .isEmpty()
   ],
-  createPlace
+  placesControllers.createPlace
 );
 
 router.patch(
-  "/:pid",
+  '/:pid',
   [
-  check("title").not().isEmpty(),
-  check("description").isLength({ min: 5 }),
+    check('title')
+      .not()
+      .isEmpty(),
+    check('description').isLength({ min: 5 })
   ],
-  updatePlaceById
+  placesControllers.updatePlace
 );
 
-router.delete("/:pid", deletePlaceById);
+router.delete('/:pid', placesControllers.deletePlace);
 
-export default router;
+module.exports = router;

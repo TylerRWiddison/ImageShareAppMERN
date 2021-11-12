@@ -4,7 +4,6 @@
 }
 
 .authentication {
-  padding: 0;
   width: 90%;
   max-width: 25rem;
   margin: 7rem auto;
@@ -12,11 +11,5 @@
 }
 
 .authentication form {
-  margin: 0 auto;
   margin-bottom: 1rem;
-  max-width: fit-content;
-}
-
-.authentication Button {
-  margin: 0 auto 1rem ;
 }
