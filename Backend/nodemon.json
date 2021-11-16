@@ -1,0 +1,9 @@
+{
+    "env": {
+        "DB_USER": "Ty",
+        "DB_PASSWORD": "IM0MhKSuMjXnxiIL",
+        "DB_NAME": "mern",
+        "GOOGLE_MAP_KEY": "AIzaSyByyb5jOzfgODCpyo7HlNiv3UelPYiuPJM",
+        "JWT_KEY": "5GHJkESfJ6WxYngrmP0KVzHrkwjNUCQGdBVXHX9X"
+    }
+}

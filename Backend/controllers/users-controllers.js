@@ -5,6 +5,8 @@ const jwt = require("jsonwebtoken");
 const HttpError = require("../models/http-error");
 const User = require("../models/user");
 
+const jwtKey = process.env.JWT_KEY
+
 const getUsers = async (req, res, next) => {
   let users;
   try {
@@ -79,7 +81,7 @@ const signup = async (req, res, next) => {
   try {
     token = jwt.sign(
       { userId: createdUser.id, email: createdUser.email },
-      "5GHJkESfJ6WxYngrmP0KVzHrkwjNUCQGdBVXHX9X",
+      jwtKey,
       { expiresIn: "1h" }
     );
   } catch (err) {
@@ -138,7 +140,7 @@ const login = async (req, res, next) => {
   try {
     token = jwt.sign(
       { userId: existingUser.id, email: existingUser.email },
-      "5GHJkESfJ6WxYngrmP0KVzHrkwjNUCQGdBVXHX9X",
+      jwtKey,
       { expiresIn: "1h" }
     );
   } catch (err) {
