@@ -1,12 +1,15 @@
 .place-item {
+  color: white;
   margin: 1rem 0;
 }
 
 .place-item__content {
+  background: #DED2A8;
   padding: 0;
 }
 
 .place-item__info {
+  background: #DED2A8;
   padding: 1rem;
   text-align: center;
 }
@@ -32,7 +35,7 @@
 .place-item__actions {
   padding: 1rem;
   text-align: center;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #302718;
 }
 
 .place-item__modal-content {
